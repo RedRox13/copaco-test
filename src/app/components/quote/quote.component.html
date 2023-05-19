@@ -1,0 +1,14 @@
+<div class="wrapper" *ngIf="quote">
+    <div class="quote">
+        <i class="fa-solid fa-quote-left"></i>
+        <div class="text">{{quote.quote}}</div>
+        <i class="fa-solid fa-quote-right"></i>
+    </div>
+    <div class="author">{{quote.author}}</div>
+    <div class="rating">
+        <button *ngFor="let item of stars; let i = index"
+                (click)="onRateClick(i + 1)"
+                [ngClass]="{'checked': item}">
+        </button>
+    </div>
+</div>
